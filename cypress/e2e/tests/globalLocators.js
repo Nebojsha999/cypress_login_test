@@ -8,4 +8,6 @@ export class globalLocators {
     removeSauceLabBacpak='#remove-sauce-labs-backpack';
     shoppingCartBadge = 'span[data-test="shopping-cart-badge"]';
     img = 'img[src="/static/media/sl-404.168b1cce.jpg"]';
+    errorMessage = 'div.error-message-container.error';
+
 }
