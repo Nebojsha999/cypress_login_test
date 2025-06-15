@@ -5,8 +5,11 @@ const lp = new loginPage();
 import { globalLocators } from "./globalLocators";
 const gl = new globalLocators();
 
+const errorUser = Cypress.env('users').error_user;
+
 it ('Login as locker user', ()=>{
-  lp.loginUser("locked_out_user", "secret_sauce")
-  cy.get(gl.errorMessage).should('contain', "Epic sadface: Sorry, this user has been locked out.");
+  lp.loginUser(errorUser.username, errorUser.password);
+  cy.get(gl.addToCartSauceLabsFleeceJacket).click();
+  cy.get(gl.removeSauceLabsFleeceJacket).should('be.visible');
 
 });
